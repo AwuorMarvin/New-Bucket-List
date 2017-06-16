@@ -1,20 +1,15 @@
-{% extends 'layouts.html'%}
+{% extends 'bootstrap/base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block body %}
     <h1>Log In</h1>
     <div class="well">
-      <form>
-          <div class="form-group">
-              <label for="email">Username</label>
-              <input type="email" class="form-control" id="usr">
-          </div>
-          <div class="form-group">
-              <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd">
-          </div>
-          <div class="checkbox">
-              <label><input type="checkbox"> Remember me</label>
-          </div>
+      <form method="POST" action="/login">
+          {{form.hidden_tag()}}
+          {{wtf.form_field(form.username)}}
+          {{wtf.form_field(form.password)}}
+          {{wtf.form_field(form.username)}}
+          {{wtf.form_field(form.username)}}
       </form>
       <button class="btn-info btn-lg">Sign Up</button>
     </div>
